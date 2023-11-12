@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="Tarea2._2.MainPage"
+             Title="Registro de firma">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25">
+
+            <StackLayout Padding="20,30,20,0">
+                <Frame Padding="0" CornerRadius="20" Background="AliceBlue">
+                    <StackLayout>
+
+                        <StackLayout BackgroundColor="#1873b9" Padding="5,0,0,5" HeightRequest="40" >
+                            <Label Text="Firme aquí 👇" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="24"/>
+                        </StackLayout>
+                        
+                        <mct:DrawingView x:Name="firma"
+                   LineColor="Black"
+                   LineWidth="5"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   HeightRequest="250"
+                   IsMultiLineModeEnabled="True"
+                   DrawingLineCompleted="creandoFirma"
+                   BackgroundColor="AliceBlue"/>
+                        <Button Text="Borrar" Clicked="btnBorrar_Clicked" CornerRadius="0" HorizontalOptions="FillAndExpand" Background="#09bc8a" TextColor="White" FontSize="16"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout>
+                    <Label Text="Descripcion" FontSize="16" Margin="0,20,0,0"/>
+                    <Frame Background="AliceBlue" CornerRadius="10" Padding="10,2,10,2" BorderColor="Blue" Margin="0">
+                        <Entry x:Name="txtDescripcion" Background="transparent"/>
+                    </Frame>
+                </StackLayout>
+
+                <Image x:Name="ImageView"
+                    HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   BackgroundColor="White" IsVisible="false"
+       HeightRequest="200"/>
+
+                <StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Button Text="Guardar" x:Name="btnGuardad" Clicked="btnGuardar_Clicked" Margin="10" HorizontalOptions="FillAndExpand" Background="#1873b9" FontSize="16" FontAttributes="Bold"/>
+                        <Button Text="Lista de firmas"  x:Name="btnLista"  Clicked="btnLista_Clicked" Margin="10"  HorizontalOptions="FillAndExpand" Background="#1873b9" FontSize="16" FontAttributes="Bold"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
